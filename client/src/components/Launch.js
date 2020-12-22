@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
 
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
@@ -53,11 +52,7 @@ const Launch = props => {
         <li className="list-group-item">Launch Year: {launch_year}</li>
         <li className="list-group-item">
           Launch Successful:{' '}
-          <span
-            className={classNames({
-              'text-success': launch_success,
-              'text-danger': !launch_success
-            })}>
+          <span className={`text-${launch_success ? 'success' : 'danger'}`}>
             {launch_success ? 'Yes' : 'No'}
           </span>
         </li>

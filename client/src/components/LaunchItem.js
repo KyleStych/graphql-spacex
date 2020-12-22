@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { format, parseISO } from 'date-fns';
 import { Link } from 'react-router-dom';
 
@@ -12,11 +11,7 @@ const LaunchItem = ({
         <div className="col-md-9">
           <h4>
             Mission:{' '}
-            <span
-              className={classNames({
-                'text-success': launch_success,
-                'text-danger': !launch_success
-              })}>
+            <span className={`text-${launch_success ? 'success' : 'danger'}`}>
               {mission_name}
             </span>
           </h4>
