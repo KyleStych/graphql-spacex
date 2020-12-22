@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { format, parseISO } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const LaunchItem = ({
   launch: { flight_number, mission_name, launch_date_local, launch_success }
@@ -22,7 +23,9 @@ const LaunchItem = ({
           <p>Date: {format(parseISO(launch_date_local), 'Pp')}</p>
         </div>
         <div className="col-md-3">
-          <button className="btn btn-secondary">Details</button>
+          <Link to={`/launch/${flight_number}`} className="btn btn-secondary">
+            Details
+          </Link>
         </div>
       </div>
     </div>
