@@ -12,7 +12,6 @@
   "author": "Kyle Stych",
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.3.6",
     "axios": "^0.21.0",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
